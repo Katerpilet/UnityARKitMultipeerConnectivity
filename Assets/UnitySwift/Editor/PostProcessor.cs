@@ -13,6 +13,12 @@ namespace UnitySwift {
         [PostProcessBuild]
         public static void OnPostProcessBuild(BuildTarget buildTarget, string buildPath) {
             if(buildTarget == BuildTarget.iOS) {
+                string headerPath = buildPath + "/Libraries/UnitySwift/";
+                string sourcePath = Application.dataPath + "/Addons/UnityARKitMultipeerConnectivity/Assets/UnitySwift/";
+                string bridgingHeaderName = "UnitySwift-Bridging-Header.h";
+                System.IO.Directory.CreateDirectory(headerPath);
+                System.IO.File.Copy(sourcePath + bridgingHeaderName, headerPath + bridgingHeaderName);
+
                 // So PBXProject.GetPBXProjectPath returns wrong path, we need to construct path by ourselves instead
                 // var projPath = PBXProject.GetPBXProjectPath(buildPath);
                 var projPath = buildPath + "/Unity-iPhone.xcodeproj/project.pbxproj";
