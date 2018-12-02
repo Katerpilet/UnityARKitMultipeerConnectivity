@@ -1,0 +1,14 @@
+{
+    "name": "UnityARKitMultipeerConnectivity",
+    "references": [
+        "UnityARKitPlugin"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [
+        "Editor",
+        "iOS",
+        "macOSStandalone"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}
